@@ -15,6 +15,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
 Route::resource('admin', 'AdminController');
 Route::resource('teachers', 'TeachersController');
 Route::resource('registration', 'RegistrationController');
@@ -23,6 +24,7 @@ Route::get('/campout/register', 'PagesController@campout')->name('campout');
 Route::get('/registration/success', 'PagesController@confirm')->name('confirm');
 Route::post('/registration', 'PagesController@store');
 Route::get('/pin', 'PagesController@pin');
+Route::get('/home', 'HomeController@index');
 Route::get('/checked/{numberOfPins}', 'PagesController@checked');
 Route::get('/admin', 'AdminController@index')->name('home');
 Route::post('/search', 'SearchController@search');

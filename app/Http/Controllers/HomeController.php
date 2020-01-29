@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\campers;
 
 class HomeController extends Controller
 {
@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $campers = campers::orderBy('created_at', 'asc')->paginate(5);
+        return view('home')->with('users', $campers);
     }
 }
