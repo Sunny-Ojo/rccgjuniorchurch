@@ -29,6 +29,7 @@ Route::get('/checked/{numberOfPins}', 'PagesController@checked');
 Route::get('/admin', 'AdminController@index')->name('home');
 Route::post('/search', 'SearchController@search');
 Route::post('/send', 'PagesController@checked');
+Route::get('/generatedPins', 'PagesController@viewPins');
 Route::get('/downloadPDF/{id}', 'PdfController@download');
 
 // Route::get('/edit', 'PagesController@edit')->name('home');

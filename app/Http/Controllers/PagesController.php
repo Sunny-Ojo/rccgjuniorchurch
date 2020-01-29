@@ -136,5 +136,10 @@ class PagesController extends Controller
         }
 
     }
+    public function viewPins()
+    {
+        $generatedPins = pin::orderBy('created_at', 'desc')->paginate(5);
+        return view('admin\generatedpins')->with('pins', $generatedPins);
+    }
 
 }

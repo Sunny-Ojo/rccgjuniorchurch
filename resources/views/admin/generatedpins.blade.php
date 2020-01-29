@@ -337,11 +337,6 @@
                                         ><i class="fa fa-circle-o"></i> Generate Pins</a
                                     >
                                 </li>
-                                <li>
-                                    <a href="/generatedPins"
-                                        ><i class="fa fa-circle-o"></i> Generated Pins</a
-                                    >
-                                </li>
 
                     </ul>
 
@@ -439,35 +434,29 @@
                             </body>
                         </div>
                         {{-- Displaying Registered campers --}}
-                        <div class="text-center card-header">
-
-                          <h3 class="breadcrumb"> Registered Campers</h3>
+               <a href="/admin" class="btn btn-secondary ">Back</a>
+         <div class=" card-header">
+                          <h3 class="breadcrumb"> Generated Pins</h3>
+                          <p><b>Note: </b> These pins are showed according to the time they were generated </p>
                         </div>
-                        <div  class="card-body">
-
-                            @if (count($users)> 0)
-                            <table class="table table-striped table-hover table-bordered">
+                        <div  class="card-body text-center">
+                            @if (count($pins)> 0)
+                            <table class="table text-center   table-bordered">
                                 <tr>
-                                  <th>Surname</th>
-                                  <th>First Name</th>
-                                  <th>Actions</th>
+                                  <th>id</th>
+                                  <th>pins</th>
                                 </tr>
-                                @foreach ($users as $user)
+                                @foreach ($pins as $pin)
                                     <tr>
-                                        <td><h3>{{$user->surname}}</h3></td>
-                                        <td><h3>{{$user->firstName}}</h3></td>
-                                        <td>
+                                        <td><h4>{{$pin->id}}</h4></td>
+                                        <td><h4>{{$pin->pins}}</h4></td>
 
-                                            <h3><a href="/admin/{{$user->id}}/edit"  class="mr-3"> <i class=" fa fa-edit mr-3" title="Edit Profile"> </i> </a>
-                                             <a href="/admin/{{$user->id}}" class=""> <i class="mr-3 fa fa-eye " title="View Profile"> </i></a>
-                                            <a href="{{ url('/downloadPDF/'.$user->id) }}"> <i class=" fa fa-download" title="Download PDF" ></i></a>
-                                        </h3></td>
                                     </tr>
                                 @endforeach
-                                {{ $users->links() }}
-                            </table>
+                            </table>                                {{ $pins->links() }}
+
                             @else
-                        <h4 class="text-danger mr-3">{{'No registered users found!!!'}}</h4>
+                        <h4 class="text-danger mr-3">{{'No pins found!!!'}}</h4>
 
                             @endif
 
