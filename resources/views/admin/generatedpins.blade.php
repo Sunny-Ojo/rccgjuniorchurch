@@ -449,11 +449,13 @@
                                 <tr>
                                   <th>id</th>
                                   <th>pins</th>
+                                  <th>Used pins</th>
                                 </tr>
                                 @foreach ($pins as $pin)
                                     <tr>
                                         <td><h4>{{$pin->id}}</h4></td>
                                         <td><h4>{{$pin->pins}}</h4></td>
+                                        <td><h4>{{$pin->used_pins}}</h4></td>
 
                                     </tr>
                                 @endforeach

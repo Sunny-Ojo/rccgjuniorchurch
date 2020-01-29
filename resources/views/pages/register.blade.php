@@ -7,7 +7,6 @@
               <h1 class="breadcrumb text-monospace">Register Now</h1>
 
                 @include('layouts.msg')
-           <br>
               {!! Form::open(['action' => 'PagesController@store', 'method' => 'POST', 'enctype'=> 'multipart/form-data']) !!}
               <div class="form-group">
                 {{ Form::label('surname', 'Enter your Surname') }}
@@ -67,7 +66,7 @@
                 {{ Form::textarea('allergies', '', ['class'=>'form-control', 'placeholder'=>'Allergies? Tell us']) }}
               </div>
               <div class="form-group">
-                <button class="btn btn-primary  " type="submit" >Register</button>
+                <button class="btn btn-primary btn-block  " type="submit" >Register</button>
 
               </div>
 
