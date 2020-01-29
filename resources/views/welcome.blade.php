@@ -2,7 +2,6 @@
 @section('title', 'Welcome to Rccg easter campout 2020')
     @section('content')
     @include('layouts.msg')
-    <br>
     <div class="jumbotron " align="center">
         <h4 class="text-capitalize">The Redeemed christian church of god, easter campout 2020!!!</h1>
     <img class="block" style="width:100px; heigth:70px; border-radius:50px" src="{{ 'img/download.png' }}" alt="Logo">

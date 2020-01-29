@@ -317,7 +317,11 @@
                                 </span>
                             </a>
                             <ul class="treeview-menu text-white">
-
+                                <li>
+                                    <a href="/generatedPins"
+                                        ><i class="fa fa-circle-o"></i> Generated Pins</a
+                                    >
+                                </li>
                                 <li class="treeview">
                                     {!! Form::open(['action'=>'PagesController@checked', 'method'=>'GET', 'class'=>'form-inline']) !!}
                                     {{-- {{ Form::label('pin', 'Generate Pins', ['class'=>'text-white']) }} --}}
