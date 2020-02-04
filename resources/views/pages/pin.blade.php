@@ -322,6 +322,11 @@
                                         ><i class="fa fa-circle-o"></i> Generate Pins</a
                                     >
                                 </li>
+                                <li>
+                                    <a href="/generatedPins"
+                                        ><i class="fa fa-circle-o"></i> Generated Pins</a
+                                    >
+                                </li>
 
                     </ul>
 

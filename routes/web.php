@@ -13,7 +13,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/hash', function () {
+    $hash = Hash::make('admin123');
+    return $hash;
+});
 Auth::routes();
 
 Route::resource('admin', 'AdminController');

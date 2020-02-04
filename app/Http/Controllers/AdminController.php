@@ -106,10 +106,17 @@ class AdminController extends Controller
         $details->parentContact = $request->parentsPhone;
         $details->area = $request->area;
         $details->zone = $request->zone;
-        $details->parish = $request->parish;
+        // $details->parish = $request->parish;
         $details->gender = $request->gender;
         $details->dob = $request->dob;
-        $details->passport = $imgtoDb;
+        if ($request->hasFile('passport')) {
+            $imgfullname = $request->file('passport')->getClientOriginalName();
+            $imgExt = $request->file('passport')->getClientOriginalExtension();
+            $imgname = pathinfo($imgfullname, PATHINFO_FILENAME);
+            $imgtoDb = $imgname . '_' . time() . '.' . $imgExt;
+            $path = $request->file('passport')->storeAs('public/passports/', $imgtoDb);
+            $details->passport = $imgtoDb;
+        }
         $details->allergies = $request->allergies;
         $details->save();
 
