@@ -34,5 +34,3 @@ Route::post('/search', 'SearchController@search');
 Route::post('/send', 'PagesController@checked');
 Route::get('/generatedPins', 'PagesController@viewPins');
 Route::get('/downloadPDF/{id}', 'PdfController@download');
-
-// Route::get('/edit', 'PagesController@edit')->name('home');

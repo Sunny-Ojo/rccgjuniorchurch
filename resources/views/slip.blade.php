@@ -37,7 +37,7 @@
         <h4><strong>First Name:</strong> {{ $users->firstName }}</h4>
         <h4><strong> Date of Birth:</strong> {{ $users->dob }}</h4>
         <h4><strong>Gender:</strong> {{ $users->gender }}</h4>
-        <h4><strong>Area:</strong> {{ $users->Area }}</h4>
+        <h4><strong>Area:</strong> {{ $users->area }}</h4>
         {{-- @php
             $area = DB::select('select 1 from teachers where area = ?', [1])
         @endphp --}}

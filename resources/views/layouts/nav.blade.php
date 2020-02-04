@@ -39,9 +39,7 @@
                     <ul class="navbar-nav ml-auto">
 
                         @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
+
                         @if (Route::has('login'))
                             <li class="nav-item">
                                 <a class="nav-link" href="/admin">Admin</a>
