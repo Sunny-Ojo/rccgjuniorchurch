@@ -8,7 +8,7 @@
 </head>
 <style>
     .row{
-        width: 80%;
+        width: 100%;
         margin: auto;
     }
     .left{
@@ -18,34 +18,47 @@
         text-align: right;
     }
     .header{
-        color: deeppink;
+        color: red;
+        position: absolute;
+        left: 10%!important;
+    }
+    .move{
+        position: absolute;
+        left: 40%!important;
+    }
+    .details{
+        position: absolute;
+        left: 60%;
+        top: 10%
     }
 
 
 </style>
 <body>
     <div class="row">
+<div>
+    <img class="move"  style="width:65px; height:65px" src="{{ public_path('/img/download.png') }}" alt="Passport">
+    <br><br> <br>
+    <h3 class="header">The Redeemed Christian church of God, Easter Campout 2020</h3>
+</div>
+<br>
+<br>
+<br>
 
-    <img class="move"  style="width:60px; height:60px" src="{{ public_path('/img/download.png') }}" alt="Passport">
-    <h3 class="header">RCCG Easter Campout 2020</h3>
+        <div class="col-md-8 col-lg-8 details">
+        <h2><strong>Surname:</strong> {{ ucfirst( $users->surname) }}</h2>
+        <h2><strong>First Name:</strong> {{ucfirst( $users->firstName) }}</h2>
+        <h2><strong> Date of Birth:</strong> {{ ucfirst( $users->dob) }}</h2>
+        <h2><strong>Gender:</strong> {{ ucfirst( $users->gender) }}</h2>
+        <h2><strong>Area:</strong> {{ ucfirst( $users->area) }}</h2>
 
- <div class="col-md-4 col-lg-4">
-        <img style="width:70%; height:60%" src="{{ public_path('/storage/passports/'.$users->passport) }}" alt="Passport">
         </div>
-        <div class="col-md-8 col-lg-8">
-        <h4><strong>Surname:</strong> {{ $users->surname }}</h4>
-        <h4><strong>First Name:</strong> {{ $users->firstName }}</h4>
-        <h4><strong> Date of Birth:</strong> {{ $users->dob }}</h4>
-        <h4><strong>Gender:</strong> {{ $users->gender }}</h4>
-        <h4><strong>Area:</strong> {{ $users->area }}</h4>
-        {{-- @php
-            $area = DB::select('select 1 from teachers where area = ?', [1])
-        @endphp --}}
-        </div>
+        <div class="col-md-4 col-lg-4">
+        <img class="image" style="width:51mm%; height:51mm%" src="{{ public_path('/storage/passports/'.$users->passport) }}" alt="Passport">
+        </div><br>
         <br>
         <br>
-        <br>
-        <span class="left">__________________ <br>Parents signature</span>
+        <p class="left">__________________ <br>Parents signature</p>
 
         <p class="right">__________________ <br>Pastor's signature</p>
         <p class="right">______________________ <br>Area Co-ordinators signature</p>
