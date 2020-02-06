@@ -479,7 +479,7 @@
 
                         <!-- /.box-body -->
                         <div class="box-footer bg-dark">
-                            <p class="text-center   text-white ">&copy; 2019 - {{ date('Y') }}, R.C.C.G Todp Parish, All rights reserved...</p>
+                            <p class="text-center pt-3 pb-3 bg-dark text-white ">&copy; 2019 - {{ date('Y') }}, RCCG Junior Church, All rights reserved...</p>
 
                         </div>
                         <!-- /.box-footer-->
