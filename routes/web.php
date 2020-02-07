@@ -13,6 +13,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/php', function () {
+    $p = phpinfo();
+    return $p;
+});
 
 Auth::routes();
 

@@ -34,6 +34,7 @@ class PagesController extends Controller
 
     public function store(Request $request)
     {
+
         // collecting the details from the user and validating it
         if (session()->has('pin_id')) {
             $pin_id = session()->get('pin_id');
@@ -48,11 +49,13 @@ class PagesController extends Controller
             'zone' => 'required',
             'gender' => 'required',
             'dob' => 'required',
-            'passport' => 'image|required',
+            'passport' => 'image|required|max:4000',
+
             'allergies' => 'nullable',
 
         ]);
         if ($request->hasFile('passport')) {
+
             $imgfullname = $request->file('passport')->getClientOriginalName();
             $imgExt = $request->file('passport')->getClientOriginalExtension();
             $imgname = pathinfo($imgfullname, PATHINFO_FILENAME);
@@ -74,9 +77,9 @@ class PagesController extends Controller
         $details->save();
         DB::update('update pins set used_pins = ? where id = ?', ['yes', $pin_id]);
         $request->session()->flush();
-        return redirect('/')->with('success', 'Thank you for registering for the Easter campout 2020...
-        Please kindly know that if there"s any need for you to update your details, you"ll need to contact your area coordinator. Have a lovely campout!!!
-        You can now leave the Website');
+        return redirect('/')->with("success", "Thank you for registering for the Easter campout 2020...
+        Please kindly know that if there's any need for you to update your details, you'll need to contact your area coordinator. Have a lovely campout!!!
+        You can now leave the Website");
     }
 
     public function edit()
@@ -103,7 +106,7 @@ class PagesController extends Controller
                 $pins->pins = $result;
                 $pins->save();
             }
-            return redirect('/admin')->with('success', 'Pins has been generated and sent successfully');
+            return redirect('/admin')->with('success', 'successfully generated and sent ');
 
         }
 

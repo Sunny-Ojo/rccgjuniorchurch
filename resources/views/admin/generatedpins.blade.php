@@ -470,7 +470,7 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="">
-                            <p class="text-center pt-3 pb-3 bg-dark text-white ">&copy; 2019 - {{ date('Y') }}, RCCG Junior Church, All rights reserved...</p>
+                            <p class="text-center pt-3 pb-3 bg-dark text-white ">&copy; 2019 - {{ date('Y') }}. RCCG Junior Church, All rights reserved...</p>
 
                         </div>
                         <!-- /.box-footer-->

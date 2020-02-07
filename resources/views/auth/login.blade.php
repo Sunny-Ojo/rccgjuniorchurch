@@ -1,12 +1,22 @@
 @extends('layouts.nav')
 @section('title', 'Login')
-
+<style>
+    body {
+        background: url('{{ asset('img/3.jpg') }}') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    </style>
 @section('content')
-<div class="container">
+@include('layouts.msg')
+{{-- <div class="container-"> --}}
+    <br>
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-12">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header text-center">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -70,5 +80,5 @@
             </div>
         </div>
     </div>
-</div>
+{{-- </div> --}}
 @endsection
