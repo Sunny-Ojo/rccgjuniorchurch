@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-md navbar-inverse  shadow-sm">
                 <a class="navbar-brand" href="{{ url('/') }}">
                  Easter Campout
                 </a>
