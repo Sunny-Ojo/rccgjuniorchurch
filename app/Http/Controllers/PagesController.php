@@ -6,6 +6,7 @@ use App\campers;
 use App\pin;
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PagesController extends Controller
 {
@@ -70,6 +71,7 @@ class PagesController extends Controller
         $details->parentContact = $request->parentsPhone;
         $details->area = $request->area;
         $details->zone = $request->zone;
+        $details->parish = $request->parish;
         $details->gender = $request->gender;
         $details->dob = $request->dob;
         $details->passport = $imgtoDb;
@@ -152,5 +154,12 @@ class PagesController extends Controller
         $generatedPins = pin::orderBy('created_at', 'desc')->paginate(5);
         return view('admin.generatedpins')->with('pins', $generatedPins);
     }
+    public function destroy($id)
+    {
 
+        $user = campers::find($id);
+        Storage::delete(['public/passports/' . $user->passport]);
+        $user->delete();
+        return redirect('/admin')->with('success', 'User has been deleted successfully');
+    }
 }

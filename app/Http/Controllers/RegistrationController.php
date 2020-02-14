@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\campers;
 use Illuminate\Http\Request;
 // use DB;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class RegistrationController extends Controller
 {
@@ -81,7 +83,11 @@ class RegistrationController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $user = campers::find($id);
+        Storage::delete(['public/passports/' . $user->passport]);
+        $user->delete();
+        return redirect('/admin')->with('success', 'User has been deleted successfully');
     }
     public function check(Request $request)
     {

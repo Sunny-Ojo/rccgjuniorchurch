@@ -21,7 +21,7 @@ class CreateCampersTable extends Migration
             $table->string('parentContact');
             $table->string('area');
             $table->string('zone');
-            // $table->string('parish');
+            $table->string('parish');
             $table->string('gender');
             $table->string('passport');
             $table->string('dob');

@@ -16,7 +16,7 @@ class PdfController extends Controller
     {
         $users = campers::find($id);
         $pdf = PDF::loadview('slip', compact('users'));
-        $pdf->setPaper('a4', 'portrait')->setWarnings(false);
+        $pdf->setPaper('a5', 'portrait')->setWarnings(false);
 
         return $pdf->download('slip.pdf');
     }

@@ -10,7 +10,6 @@
     }
     </style>
 @section('content')
-@include('layouts.msg')
 {{-- <div class="container-"> --}}
     <br>
     <div class="row justify-content-center">

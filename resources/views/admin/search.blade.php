@@ -86,11 +86,25 @@
                                 </ul>
                             </li>
                             <!-- Control Sidebar Toggle Button -->
-                            <li>
-                                <a href="#" data-toggle="control-sidebar"
-                                    ><i class="fa fa-gears"></i
-                                ></a>
-                            </li>
+
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+
                         </ul>
                     </div>
                 </nav>
@@ -182,26 +196,7 @@
                     <div class="box">
                         <div class="box-header with-border">
 <a href="/admin" class="btn btn-bitbucket ml-3">Back</a>
-                            {{-- <div class="box-tools pull-right">
-                                <button
-                                    type="button"
-                                    class="btn btn-box-tool"
-                                    data-widget="collapse"
-                                    data-toggle="tooltip"
-                                    title="Collapse"
-                                >
-                                    <i class="fa fa-minus"></i>
-                                </button>
-                                <button
-                                    type="button"
-                                    class="btn btn-box-tool"
-                                    data-widget="remove"
-                                    data-toggle="tooltip"
-                                    title="Remove"
-                                >
-                                    <i class="fa fa-times"></i>
-                                </button>
-                            </div> --}}
+
                             <form action="/search" method="POST" class="sidebar-form">
                                 {{ csrf_field() }}
                                 <div class="input-group">
@@ -236,10 +231,12 @@
                                     <td><h3>{{$item->firstName}}</h3></td>
                                     <td>
 
-                                        <h3><a href="/admin/{{$item->id}}/edit"  class="mr-3"> <i class=" fa fa-edit mr-3" title="Edit Profile"> </i> </a>
-                                         <a href="/admin/{{$item->id}}" class=""> <i class="mr-3 fa fa-eye " title="View Profile"> </i></a>
-                                        <a href="{{ url('/downloadPDF/'.$item->id) }}"> <i class=" fa fa-download" title="Download PDF" ></i></a>
-                                    </h3></td>
+
+                                        <h3><a href="/admin/{{$item->id}}" class="btn btn-success "title="View Profile"> view </a>
+                                            <a href="/admin/{{$item->id}}/edit"  class="btn btn-warning"title="Edit Profile"> Edit</a>
+                                            <a href="{{ url('/downloadPDF/'.$item->id) }}" class=" btn btn-primary" title="Download PDF" >Download</a>
+
+                                        </h3></td>
                                 </tr>
                             @endforeach
                         </table>
