@@ -1,4 +1,5 @@
 {
-    "editor.fontFamily": "duolos dil",
-    "editor.fontSize": 16
+    "editor.fontFamily": "ezra sil sr",
+    "editor.fontSize": 14,
+    "terminal.integrated.fontFamily": "ezra sil "
 }

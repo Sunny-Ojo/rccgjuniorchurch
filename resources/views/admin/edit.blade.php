@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-8 col-lg-8 offset-md-2">
 
-              <h1 class="breadcrumb text-monospace">Update Profile</h1>
+              <h1 class="breadcrumb ">Update {{ $user->surname }} {{ $user->firstName."'s" }} Profile</h1>
 
                 @include('layouts.msg')
 
@@ -55,10 +55,11 @@
               'Praise Center'=>'Area 11 - Praise Center', 'Christ Court'=>'Area 12 - Christ Court','Dominion Assembly' =>'Area 13 - Dominion Assembly', 'House of Glory'=>'Area 14 - House of Glory', 'Peace Maker'=>'Area 15 - Peace Maker','Palace of Peace'=>'Area 16 - Palace of Peace','Seat of His Mercy'=>'Area 17 - Seat of His Mercy',' Potters House'=>'Area 18 - Potters House',
               'Kings'=>'Area 19 - Kings','Gospel Truth Assembly'=>'Area 20 - Gospel Truth Assembly','Gospel Faith Assembly'=>'Area 21 - Gospel Faith Assembly','Jubilee'=>'Area 22 - Jubilee','Santuary of Praise'=>'Area 23 - Santuary of Praise','Garden of Peace'=>'Area 24 - Garden of Peace','Citadel of Glory'=>'Area 25 - Citadel of Glory','Bread of Life'=>'Area 26 - Bread of Life',
               'Emmanuel'=>'Area 27 - Emmanuel','Fountain of Life'=>'Area 28 - Fountain of Life','Mountain of God'=>'Area 29 - Mountain of God','Divine Connection'=>'Area 30 - Divine Connection','Area 31'=>'Area 31 - Mercy Place','Gideon Army'=>'Area 32 - Gideon Army','The Lords Heritage House'=>'Area 33 - The Lords Heritage House','House of Faith'=>'Area 34 - House of Faith',
-              'Flourishing'=>'Area 35 - Flourishing','Holiness Assembly'=>'Area 36 - Holiness Assembly',' Hope of Glory'=>'Area 37 - Hope of Glory','Restoration'=>'Area 38 - Restoration',
-
-
-            ],$user->area,['class'=>'form-control'])  }}
+              'Flourishing'=>'Area 35 - Flourishing','Holiness Assembly'=>'Area 36 - Holiness Assembly',' Hope of Glory'=>'Area 37 - Hope of Glory','Restoration'=>'Area 38 - Restoration' ],$user->area,['class'=>'form-control'])  }}
+              </div>
+              <div class="form-group">
+                {{ Form::label('parish', 'Enter  your Parish name: ') }}
+              {{ Form::text('parish',$user->parish,['class'=>'form-control'])  }}
               </div>
               <img style="width:20%; height:20%" src="{{'/storage/passports/'.$user->passport }}" alt="Passport">
               <div class="form-group">

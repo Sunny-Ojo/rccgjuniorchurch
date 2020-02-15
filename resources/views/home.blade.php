@@ -20,11 +20,11 @@
                   <td>
 
 
-                      <h3><a href="/admin/{{$user->id}}" class="btn btn-success "title="View Profile"> view </a>
+                      <h4 ><a href="/admin/{{$user->id}}" class="btn btn-success "title="View Profile"> view </a>
                           <a href="/admin/{{$user->id}}/edit"  class="btn btn-warning"title="Edit Profile"> Edit</a>
                           <a href="{{ url('/downloadPDF/'.$user->id) }}" class=" btn btn-primary" title="Download PDF" >Download</a>
 
-                      </h3></td>
+                      </h4></td>
               </tr>
           @endforeach
           {{ $users->links() }}

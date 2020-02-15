@@ -10,12 +10,15 @@
 |
  */
 
+use Illuminate\Support\Facades\Hash;
+
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/php', function () {
-    $p = phpinfo();
-    return $p;
+Route::get('/hash', function () {
+    $pass = 'admin123';
+    $me = Hash::make($pass);
+    return $me;
 });
 
 Auth::routes();
@@ -27,11 +30,11 @@ Route::post('/check', 'PagesController@check');
 Route::get('/campout/register', 'PagesController@campout')->name('campout');
 Route::get('/registration/success', 'PagesController@confirm')->name('confirm');
 Route::post('/registration', 'PagesController@store');
-Route::get('/pin', 'PagesController@pin');
-Route::get('/home', 'HomeController@index');
-Route::get('/checked/{numberOfPins}', 'PagesController@checked');
+Route::get('/pin', 'PagesController@pin')->middleware('auth');
+Route::get('/home', 'HomeController@index')->middleware('auth');
+// Route::get('/checked/{numberOfPins}', 'PagesController@checked');
 Route::get('/admin', 'AdminController@index')->name('home');
-Route::post('/search', 'SearchController@search');
-Route::post('/send', 'PagesController@checked');
-Route::get('/generatedPins', 'PagesController@viewPins');
-Route::get('/downloadPDF/{id}', 'PdfController@download');
+Route::post('/search', 'SearchController@search')->middleware('auth');
+Route::post('/send', 'PagesController@checked')->middleware('auth');
+Route::get('/generatedPins', 'PagesController@viewPins')->middleware('auth');
+Route::get('/downloadPDF/{id}', 'PdfController@download')->middleware('auth');

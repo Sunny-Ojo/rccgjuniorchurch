@@ -49,7 +49,7 @@ Today, God is still doing marvelous deeds through the Redeemed Christian Church 
 </div>
 <hr> --}}
 
-      <p class="text-white badge-dark text-bold   ">&copy; 2019 - {{ date('Y') }}. RCCG Junior Church, All rights reserved...</p>
+      <p class="text-white badge-dark text-bold  pt-2 pb-2 ">&copy; 2019 - {{ date('Y') }}. RCCG Junior Church, All rights reserved...</p>
 </div>
 
 

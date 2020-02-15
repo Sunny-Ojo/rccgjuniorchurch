@@ -18,6 +18,7 @@
                 <h4><strong>Gender:</strong> {{ucfirst( $users->gender) }}</h4>
                 <h4><strong>Zone:</strong> {{ucfirst( $users->zone) }}</h4>
                 <h4><strong>Area:</strong> {{ucfirst( $users->area) }}</h4>
+                <h4><strong>Parish:</strong> {{ucfirst( $users->parish) }}</h4>
                 <h4><strong>Allergies:</strong> {{ucfirst( $users->allergies) }}</h4>
                 </div>
                            </div>

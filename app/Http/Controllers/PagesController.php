@@ -49,6 +49,7 @@ class PagesController extends Controller
             'area' => 'required',
             'zone' => 'required',
             'gender' => 'required',
+            'parish' => 'required',
             'dob' => 'required',
             'passport' => 'image|required|max:4000',
 
@@ -81,7 +82,7 @@ class PagesController extends Controller
         $request->session()->flush();
         return redirect('/')->with("success", "Thank you for registering for the Easter campout 2020...
         Please kindly know that if there's any need for you to update your details, you'll need to contact your area coordinator. Have a lovely campout!!!
-        You can now leave the Website");
+        You can now exit");
     }
 
     public function edit()
