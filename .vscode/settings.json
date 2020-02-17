@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "sans-serif",
+    "editor.fontFamily": "consolas",
     "editor.fontSize": 14,
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.fontWeightBold": "normal",
