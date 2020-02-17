@@ -1,5 +1,7 @@
 {
-    "editor.fontFamily": "ezra sil sr",
+    "editor.fontFamily": "sans-serif",
     "editor.fontSize": 14,
-    "terminal.integrated.fontFamily": "ezra sil "
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.fontWeightBold": "normal",
+    "terminal.integrated.fontFamily": "monospace"
 }

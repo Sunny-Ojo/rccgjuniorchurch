@@ -7,7 +7,7 @@
               <h3 class="breadcrumb text-monospace">{{ $users->surname }} {{ $users->firstName }}'s Profile</h1>
               <div class="row">
                 <div class="col-md-4 col-lg-4">
-                <img style="width:100%; height:80%" src="{{ '/storage/passports/'.$users->passport }}" alt="Passport">
+                <img style="width:100%; height:65%" src="{{ '/storage/passports/'.$users->passport }}" alt="Passport">
                 </div>
                 <div class="col-md-8 col-lg-8">
                 <h4><strong>Surname:</strong> {{ucfirst( $users->surname) }}</h4>
