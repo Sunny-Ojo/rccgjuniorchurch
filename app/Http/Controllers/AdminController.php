@@ -19,7 +19,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $campers = campers::orderBy('created_at', 'asc')->paginate(5);
+        $campers = campers::orderBy('created_at', 'asc')->paginate(10);
         return view('admin.dashboard')->with('users', $campers);
     }
 
