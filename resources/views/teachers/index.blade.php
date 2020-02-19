@@ -1,45 +1,43 @@
 @extends('layouts.admin')
-@section('title','List of registered teachers')
-    @section('content')
-    <a href="/admin" class="btn btn-bitbucket ml-3">Back</a>
+@section('content')
 
-    @if(count($teachers)> 0)
-    <table class="table table-bordered table-sm ">
+      @if (count($teachers)> 0)
+   <div class="text-center card-header">
+ @php
+      $all = count($teachers);
+  @endphp
+    <h3 class="breadcrumb"> Registered Teachers ({{ $all }})</h3>
+  </div>
+
+  <div  class="card-body">
+
+
+      <table class="table table-striped  table-bordered">
         <tr>
-            <th>S/N</th>
-            <th>Title</th>
-            <th>Position</th>
-            <th>Surname</th>
-            <th>First Name</th>
-            <th>Gender</th>
-            <th>Department</th>
-            <th>Actions (Edit, View, Download PDF)</th>
+            <th><b>Surname</b> </th>
+            <th><b> First Name</b></th>
+            <th>Actions </th>
         </tr>
         <tr>
             @foreach ($teachers as $user)
-                                  <td>{{$user->id}}</td>
-                                  <td>{{ucfirst($user->title)}}</td>
-                                  <td>{{ucfirst($user->position)}}</td>
-                                  <td>{{ucfirst($user->surname)}}</td>
-                                  <td>{{ucfirst($user->firstName)}}</td>
-                                  <td>{{ucfirst($user->gender)}}</td>
-                                  <td>{{ucfirst($user->department)}}</td>
+                                  <td><h4>{{ucfirst($user->surname)}}</h4></td>
+                                  <td><h4>{{ucfirst($user->firstName)}}</h4></td>
         <td>
-            {{-- <a href="/admin/{{$user->id}}/edit" class="btn btn-success">Update User</a>
-           class="btn btn-primary">View profile</a>
-            class="btn btn-warning">Generate PDF</a> --}}
-            <a href="/admin/{{$user->id}}/edit"  class="mr-3"> <i class=" fa fa-edit fa-1x mr-2" title="Edit Profile"></i> </a>
-             <a href="/admin/{{$user->id}}" class="mr-3"><i class=" fa fa-eye fa-1x mr-2 " title="View Profile"></i></a>
-            <a href="{{ url('/downloadPDF/'.$user->id) }}"> <i class=" fa fa-download fa-1x mr-2" title="Download PDF"></i></a>
-        </td>
-            @endforeach
-        {{ $teachers->links() }} </tr>
-    </table>
+            <h4 ><a href="/teachers/{{$user->id}}" class="btn btn-success "title="View Profile"> view </a>
+                <a href="/teachers/{{$user->id}}/edit"  class="btn btn-warning"title="Edit Profile"> Edit</a>
+                <a href="{{ url('/download/'.$user->id) }}" class=" btn btn-primary" title="Download PDF" >Download</a>
 
-  {{-- </div> --}}
-  @else
-<h4 class="text-danger">{{'No registered teachers'}}</h4>
-@endif
+            </h4> </td>
+        </tr>
+         @endforeach
+        {{ $teachers->links() }}
+      </div>
+     </table>
+      @else
+  <h4 class="text-danger mr-3">{{'No registered users found!!!'}}</h4>
 
-<hr>
+      @endif
+
+  </div>
+
 @endsection

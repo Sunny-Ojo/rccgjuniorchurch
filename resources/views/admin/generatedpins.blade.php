@@ -4,8 +4,9 @@
     <a href="/admin" class="btn btn-secondary ">Back</a>
     <div class=" card-header">
                      <h3 class="breadcrumb"> Generated Pins</h3>
-                     <p><b>Note: </b> These pins are showed according to the time they were generated </p>
-                   </div>
+                     <p class="text-info"><b>Note: </b> These pins are showed according to the time they were generated </p>
+                 <hr>
+                    </div>
                    <div  class="card-body text-center">
                        @if (count($pins)> 0)
                        <table class="table text-center   table-bordered">

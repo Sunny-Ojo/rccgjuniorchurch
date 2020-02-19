@@ -1,10 +1,11 @@
 @extends('layouts.nav')
 @section('title', 'Welcome | Register')
     @section('content')
+    <br>
         <div class="row">
             <div class="col-md-8 col-lg-8 offset-md-2">
 
-              <h1 class="breadcrumb "> Teachers Registration</h1>
+                <h1 class="breadcrumb "> Teachers Registration</h1>
 
                 @include('layouts.msg')
               {!! Form::open(['action' => 'TeachersController@store', 'method' => 'POST', 'enctype'=> 'multipart/form-data']) !!}
@@ -28,15 +29,20 @@
 
                    <div class="form-group">
                 {{ Form::label('gender', 'Select your Gender: ') }}
-              {{ Form::select('gender', ['Female' => 'female', 'Male' => 'male' ], '',['class'=>'form-control'])  }}
+              {{ Form::select('gender', ['Female' => 'Female', 'Male' => 'Male' ], '',['class'=>'form-control'])  }}
               </div>
+
+
 
               <div class="form-group">
                 {{ Form::label('Department', 'Department to Function: ') }}
-              {{ Form::select('Department', ['Welfare department' => 'Welfare department', 'Sanitation  dapartment' => ' Sanitation dapartment', ''],['class'=>'form-control'])  }}
+              {{ Form::select('Department', ['Welfare department' => 'Welfare department', 'Sanitation  dapartment' => ' Sanitation dapartment', ''],'',['class'=>'form-control'])  }}
               </div>
 
-
+    <div class="form-group">
+                {{ Form::label('passport', 'Upload your passport: ') }} <br>
+              {{ Form::file('passport')  }}
+              </div>
 
 
               <div class="form-group">
@@ -45,9 +51,10 @@
               </div>
 
               {!! Form::close() !!}
+
             </div>
 
         </div>
-        <p class="text-center pt-3 pb-3 bg-dark text-white ">&copy; 2019 - {{ date('Y') }}, R.C.C.G Todp Parish, All rights reserved...</p>
+        <p class="text-center pt-3 pb-3 bg-dark text-white ">&copy; 2019 - {{ date('Y') }}, RCCG Junior Church, All rights reserved...</p>
 
 @endsection

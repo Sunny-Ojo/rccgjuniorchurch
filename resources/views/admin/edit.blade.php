@@ -61,11 +61,11 @@
                 {{ Form::label('parish', 'Enter  your Parish name: ') }}
               {{ Form::text('parish',$user->parish,['class'=>'form-control'])  }}
               </div>
-              <img style="width:20%; height:20%" src="{{'/storage/passports/'.$user->passport }}" alt="Passport">
               <div class="form-group">
-       {{ Form::label('passport', 'Upload your Passport:') }} <br>
+{{ Form::label('passport', 'Upload your Passport:') }} <br>
        {{ Form::file('passport') }} <br>
-              </div>
+                                  <img class="mt-2" style="width:50%; height:30%" src="{{'/storage/passports/'.$user->passport }}" alt="Passport">
+ </div>
               <div class="form-group">
                 {{ Form::label('allergies', 'Any Allergies?') }}
                 {{ Form::textarea('allergies', $user->allergies, ['class'=>'form-control', 'placeholder'=>'Allergies? Tell us']) }}

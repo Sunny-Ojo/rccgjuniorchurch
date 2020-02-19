@@ -35,7 +35,7 @@ class PagesController extends Controller
 
     public function store(Request $request)
     {
-
+        ini_set('upload_max_size', '24M');
         // collecting the details from the user and validating it
         if (session()->has('pin_id')) {
             $pin_id = session()->get('pin_id');
@@ -45,14 +45,13 @@ class PagesController extends Controller
             'surname' => 'required',
             'firstName' => 'required',
             'parentsName' => 'required',
-            'parentsPhone' => 'required|min:11',
+            'parentsPhone' => 'required',
             'area' => 'required',
             'zone' => 'required',
             'gender' => 'required',
             'parish' => 'required',
             'dob' => 'required',
-            'passport' => 'image|required|max:4000',
-
+            'passport' => 'image|required',
             'allergies' => 'nullable',
 
         ]);
@@ -162,5 +161,37 @@ class PagesController extends Controller
         Storage::delete(['public/passports/' . $user->passport]);
         $user->delete();
         return redirect('/admin')->with('success', 'User has been deleted successfully');
+    }
+    public function teachers()
+    {
+        return view('teachers.teachersPin');
+    }
+    public function confirmPin(Request $request)
+    {
+        $this->validate($request, [
+            'pin' => 'required',
+        ]);
+        $pin = $request->input('pin');
+
+        // checking the database to check if pin has already been used or if it exists in the database
+
+        $checkPin = DB::select('select pins AND used_pins from pins where pins = ? AND used_pins = ?', [$pin, 'yes']);
+        $checkOnlyPin = DB::select('select * from pins where pins = ?', [$pin]);
+        if ($checkPin == true) {
+            return redirect('/register/teacher')->with('error', 'Sorry, this pin has  already been used, however if you would like to update your details you can contact your area co-ordinator... Thanks.');
+        } elseif ($checkOnlyPin == true) {
+            foreach ($checkOnlyPin as $checkers) {
+                $pin_id = $checkers->id;
+                $request->session()->put('access', 'true');
+                $request->session()->put('pin_id', $pin_id);
+
+                //
+                //         DB::update('update pins set used_pins = ? where id = ?', ['yes', $pin_id]);
+                return redirect('/teachers/create');
+            }
+
+        } else {
+            return redirect('/register/teacher')->with('error', 'invalid pin');
+        }
     }
 }

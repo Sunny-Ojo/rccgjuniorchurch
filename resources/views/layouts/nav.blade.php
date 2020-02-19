@@ -37,14 +37,19 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-
+  <li class="nav-item">
+                                <a class="nav-link" href="/register/teacher">Teachers</a>
+                            </li>
                         @guest
 
                         @if (Route::has('login'))
-                            <li class="nav-item">
+
+                             <li class="nav-item">
                                 <a class="nav-link" href="/admin">Admin</a>
                             </li>
+
                         @endif
+
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

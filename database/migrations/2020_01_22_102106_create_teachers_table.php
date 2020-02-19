@@ -21,6 +21,7 @@ class CreateTeachersTable extends Migration
             $table->string('firstName');
             $table->string('gender');
             $table->string('department');
+            $table->string('passport');
 
             $table->timestamps();
         });

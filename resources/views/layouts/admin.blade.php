@@ -9,6 +9,8 @@
             content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
             name="viewport"
         />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         <!-- Bootstrap 3.3.6 -->
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
         <!-- Font Awesome -->
@@ -65,10 +67,7 @@
                                     data-toggle="dropdown"
                                 >
 
-                                    <span class="hidden-xs"
-                                        {{-- >{{ auth()->user()->name }}</span --}}
-                                        ></span
-                                    >
+
                                 </a>
                                 <ul class="dropdown-menu">
 
@@ -179,7 +178,7 @@
                     </h1>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="#"><i class="fa fa-dashboard"></i> Home</a>
+                            <a href="/admin"><i class="fa fa-dashboard"></i> Home</a>
                         </li>
                         <li><a href="/pin">Pins</a></li>
                         <li class=""><a href="/teachers"> Teachers</a></li>
