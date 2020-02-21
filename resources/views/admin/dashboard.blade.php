@@ -13,6 +13,7 @@
 <table class="table table-striped  table-bordered">
           <tr>
 
+            <th><b>S/N</b></th>
             <th><b>SURNAME</b></th>
             <th><b>FIRST NAME</b></th>
             <th><b>ACTIONS</b></th>
@@ -20,6 +21,7 @@
           @foreach ($users as $user)
               <tr>
 
+                  <td><h4>{{$user->id}}</h4></td>
                   <td><h4>{{$user->surname}}</h4></td>
                   <td><h4>{{$user->firstName}}</h4></td>
                   <td>

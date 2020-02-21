@@ -1,10 +1,16 @@
 @extends('layouts.nav')
 @section('title', 'Welcome | Register')
+<style>
+    .form-control{
+        box-shadow: none!important;
+    }
+</style>
     @section('content')
+    <br>
         <div class="row">
             <div class="col-md-8 col-lg-8 offset-md-2">
 
-              <h1 class="breadcrumb text-monospace">Register Now</h1>
+              <h4 class="breadcrumb text-monospace">Register Now</h4>
 
                 @include('layouts.msg')
               {!! Form::open(['action' => 'PagesController@store', 'method' => 'POST', 'enctype'=> 'multipart/form-data']) !!}

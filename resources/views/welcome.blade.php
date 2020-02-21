@@ -1,5 +1,6 @@
 @extends('layouts.nav')
 @section('title', 'Welcome to Rccg easter campout 2020')
+
 <style>
 body {
     background: url('{{ asset('img/3.jpg') }}') no-repeat center center fixed;
@@ -7,7 +8,9 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
+} .form-control{
+        box-shadow: none!important;
+    }
 </style>
     @section('content')
     @include('layouts.msg')

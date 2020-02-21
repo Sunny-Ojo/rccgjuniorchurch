@@ -28,7 +28,7 @@ body {
        {{ Form::text('pin', '', ['class'=> 'form-control', 'placeholder' => 'Pin']) }}
          {{-- </div> --}}
          {{-- <div class="form-group"> --}}
-        {{ Form::submit('Proceed', ['class'=> 'mt-1 btn btn-primary float-left']) }}
+        {{ Form::submit('Proceed', ['class'=> 'mt-1 btn btn-success float-left']) }}
         </div>
  {!! Form::close() !!}
 

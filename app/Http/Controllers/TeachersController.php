@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class TeachersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['create', 'store']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +33,12 @@ class TeachersController extends Controller
      */
     public function create()
     {
-        return view('teachers.register');
+        if (session()->has('pin_id')) {
+            return view('teachers.register');
+        }
+        {
+            return redirect('/register/teacher');
+        }
     }
 
     /**
@@ -140,11 +150,11 @@ class TeachersController extends Controller
             $imgname = pathinfo($imgfullname, PATHINFO_FILENAME);
             $imgtoDb = $imgname . '_' . time() . '.' . $imgExt;
             $path = $request->file('passport')->storeAs('public/passports/', $imgtoDb);
+            $teachers->passport = $imgtoDb;
         }
-        $teachers->passport = $imgtoDb;
         $teachers->save();
 
-        return redirect('/admin')->with('success', 'Profile was updated successfully');
+        return redirect('/teachers')->with('success', 'Profile was updated successfully');
     }
 
     /**

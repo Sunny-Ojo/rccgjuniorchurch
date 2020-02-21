@@ -1,5 +1,6 @@
 @extends('layouts.nav')
 @section('title', 'Login')
+
 <style>
     body {
         background: url('{{ asset('img/3.jpg') }}') no-repeat center center fixed;
@@ -8,14 +9,17 @@
         -o-background-size: cover;
         background-size: cover;
     }
+    .form-control{
+        box-shadow: none!important;
+    }
     </style>
 @section('content')
 {{-- <div class="container-"> --}}
     <br>
     <div class="row justify-content-center">
-        <div class=" col-md-8 ">
+        <div class=" col-md-8 col-lg-6 offset-lg-0 mt-lg-5 ">
             <div class="card">
-                <div class="card-header text-center ">{{ __('Login') }}</div>
+                <div class="card-header text-center ">{{ __('Login') }} As Admin</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -79,5 +83,7 @@
             </div>
         </div>
     </div>
+    <p class="text-center pt-3 pb-3 bg-dark text-white pb-lg-4 ">&copy; 2019 - {{ date('Y') }}. RCCG Junior Church, All rights reserved...</p>
+
 {{-- </div> --}}
 @endsection

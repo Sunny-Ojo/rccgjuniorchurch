@@ -1,10 +1,17 @@
 @extends('layouts.nav')
 @section('title', 'Update Profile')
+<style>
+    .form-control{
+        box-shadow: none!important;
+    }
+</style>
     @section('content')
+    <br>
+<a href="/admin" class="btn btn-secondary mb-2">Previous page</a>
         <div class="row">
             <div class="col-md-8 col-lg-8 offset-md-2">
 
-              <h1 class="breadcrumb ">Update {{ $user->surname }} {{ $user->firstName."'s" }} Profile</h1>
+              <h4 class="breadcrumb ">Update {{ $user->surname }} {{ $user->firstName."'s" }} Profile</h4>
 
                 @include('layouts.msg')
 
@@ -38,15 +45,12 @@
               </div>
                <div class="form-group">
                 {{ Form::label('zone', 'Select your Zone: ') }}
-                {{ Form::select('zone', ['Zone 1' => 'Living Hope (Zone 1)', 'Zone 2' => 'Halleluyah (Zone 2)',
+                {{ Form::select('zone', ['The Open Door' => 'The Open Door','Christ The King'=>'Christ The King','House of Jubilation'=>'House of Jubilation','Strong Tower Assembly '=>'Strong Tower Assembly','House of Praise'=>'House of Praise','Zone 1' => 'Living Hope (Zone 1)', 'Zone 2' => 'Halleluyah (Zone 2)',
                 'Zone 3' => 'Peace (Zone 3)', 'Zone 4' => 'Praise Centre (Zone 4)','Zone 5' => 'True Light (Zone 5)', 'Zone 6' => 'Rose of Sharon (Zone 6)',
                 'Zone 7' => 'Emmanuel (Zone 7)', 'Zone 8' => 'Living Stream (Zone 8)'
-                ],['class'=>'form-control'])  }}
+                ],'',['class'=>'form-control'])  }}
               </div>
-                 <div class="form-group">
-                {{ Form::label('parish', 'Select your parish: ') }}
-              {{ Form::select('parish', ['Female' => 'female', 'Male' => 'male' ],$user->parish,['class'=>'form-control'])  }}
-              </div>
+
 
                  <div class="form-group">
                 {{ Form::label('area', 'Select your Area: ') }}
@@ -61,10 +65,12 @@
                 {{ Form::label('parish', 'Enter  your Parish name: ') }}
               {{ Form::text('parish',$user->parish,['class'=>'form-control'])  }}
               </div>
+
               <div class="form-group">
-{{ Form::label('passport', 'Upload your Passport:') }} <br>
-       {{ Form::file('passport') }} <br>
-                                  <img class="mt-2" style="width:50%; height:30%" src="{{'/storage/passports/'.$user->passport }}" alt="Passport">
+        {{ Form::label('passport', 'Upload your Passport:') }} <br>
+       {{ Form::file('passport') }}
+        <br>
+         <img style="height:120px;width:140px" src="{{'/storage/passports/'.$user->passport }}" alt="Passport">
  </div>
               <div class="form-group">
                 {{ Form::label('allergies', 'Any Allergies?') }}

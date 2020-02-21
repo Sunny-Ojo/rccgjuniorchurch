@@ -1,11 +1,16 @@
 @extends('layouts.nav')
 @section('title', 'Update Profile')
+<style>
+    .form-control{
+        box-shadow: none!important;
+    }
+</style>
     @section('content')
     <br>
         <div class="row">
             <div class="col-md-8 col-lg-8 offset-md-2">
 
-            <h1 class="breadcrumb "> Update {{$users->firstName}} {{$users->surname}}'s Profile</h1>
+            <h4 class="breadcrumb "> Update {{$users->firstName}} {{$users->surname}}'s Profile</h4>
 
                 @include('layouts.msg')
               {!! Form::open(['action' => ['TeachersController@update',$users->id] ,'method' => 'PUT', 'enctype'=> 'multipart/form-data']) !!}
@@ -29,7 +34,7 @@
 
                    <div class="form-group">
                 {{ Form::label('gender', 'Select your Gender: ') }}
-              {{ Form::select('gender', ['Female' => 'Female', 'Male' => 'Male' ], $users->gender,['class'=>'form-control'])  }}
+              {{ Form::select('gender', ['Male' => 'Male', 'Female' => 'Female' ], $users->gender,['class'=>'form-control'])  }}
               </div>
 
 
@@ -42,8 +47,8 @@
               <div class="form-group">
                 {{ Form::label('passport', 'Upload your Passport:') }} <br>
                        {{ Form::file('passport') }} <br>
-                                                  <img class="mt-2" style="width:50%; height:30%" src="{{'/storage/passports/'.$users->passport }}" alt="Passport">
-                 </div>
+                       <img style="height:120px;width:140px" src="{{'/storage/passports/'.$users->passport }}" alt="Passport">
+                    </div>
 
 
               <div class="form-group">

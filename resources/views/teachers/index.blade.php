@@ -14,12 +14,14 @@
 
       <table class="table table-striped  table-bordered">
         <tr>
+            <th><b>S/N</b> </th>
             <th><b>Surname</b> </th>
             <th><b> First Name</b></th>
             <th>Actions </th>
         </tr>
         <tr>
             @foreach ($teachers as $user)
+                                  <td><h4>{{ucfirst($user->id)}}</h4></td>
                                   <td><h4>{{ucfirst($user->surname)}}</h4></td>
                                   <td><h4>{{ucfirst($user->firstName)}}</h4></td>
         <td>
