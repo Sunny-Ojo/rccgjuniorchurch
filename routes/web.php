@@ -28,6 +28,7 @@ Auth::routes();
 
 Route::resource('admin', 'AdminController');
 Route::resource('teachers', 'TeachersController');
+Route::post('/teacherSearch', 'SearchController@teachers');
 Route::resource('registration', 'RegistrationController');
 Route::post('/check', 'PagesController@check');
 Route::get('/campout/register', 'PagesController@campout')->name('campout');

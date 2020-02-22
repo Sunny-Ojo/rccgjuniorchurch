@@ -22,7 +22,7 @@ class TeachersController extends Controller
     {
 
         $teachersCount = teachers::all();
-        $teachers = teachers::orderBy('created_at', 'desc')->paginate(10);
+        $teachers = teachers::orderBy('created_at', 'asc')->paginate(10);
         return view('teachers.index')->with('teachers', $teachers);
     }
 
