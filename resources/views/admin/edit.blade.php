@@ -7,7 +7,6 @@
 </style>
     @section('content')
     <br>
-<a href="/admin" class="btn btn-secondary mb-2">Previous page</a>
         <div class="row">
             <div class="col-md-8 col-lg-8 offset-md-2">
 

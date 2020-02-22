@@ -106,7 +106,7 @@ class AdminController extends Controller
         $details->parentContact = $request->parentsPhone;
         $details->area = $request->area;
         $details->zone = $request->zone;
-        // $details->parish = $request->parish;
+        $details->parish = $request->parish;
         $details->gender = $request->gender;
         $details->dob = $request->dob;
         if ($request->hasFile('passport')) {
