@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\campers;
 use App\teachers;
 use DB;
 use Illuminate\Http\Request;
@@ -20,10 +21,9 @@ class TeachersController extends Controller
      */
     public function index()
     {
-
-        $teachersCount = teachers::all();
-        $teachers = teachers::orderBy('created_at', 'asc')->paginate(10);
-        return view('teachers.index')->with('teachers', $teachers);
+        $teachers = Teachers::orderBy('created_at', 'asc')->paginate(10);
+        $campers = campers::orderBy('created_at', 'asc')->paginate(10);
+        return view('teachers.index')->with(['campers' => $campers, 'teachers' => $teachers]);
     }
 
     /**

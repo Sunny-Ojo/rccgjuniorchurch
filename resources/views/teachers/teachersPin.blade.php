@@ -15,7 +15,7 @@ body {
         <h4 class="text-dark  text-capitalize pt-1">The Redeemed christian church of god, easter campout 2020!!!</h4>
         <img class="block" style="width:100px; heigth:50px; border-radius:50px" src="{{ '/img/download.png' }}" alt="Logo">
         <p>Jesus christ the same yesterday, and today and forever</p>
-    <b><i>Hebrews 11:8</i> </b>
+    <b><i>Hebrews 13:8</i> </b>
     <hr>
     <div class="row">
 
@@ -38,16 +38,6 @@ body {
 
 <hr>
 
-  {{-- <h2 class="breadcrumb">About this Program</h2>
-<div >
-
-   <p  align=""> Redeemed Christian Church of God Easter Campout for all Teenagers is a programme that  holds every year.
-    We encourage Parents to endeavour to allow their children to attend the Campout as it is for their own good.
-Today, God is still doing marvelous deeds through the Redeemed Christian Church of God, worldwide. One of
- the  well-known programs of the church is the Holy Ghost Service, an all night miracle service
-  that holds on the first Friday of every month at the Redemption Camp.</p>
-</div>
-<hr> --}}
 
       <p class="text-white badge-dark text-bold  pt-2 pb-2 ">&copy; 2019 - {{ date('Y') }}. RCCG Junior Church, All rights reserved...</p>
 </div>

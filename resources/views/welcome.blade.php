@@ -18,7 +18,7 @@ body {
         <h4 class="text-dark  text-capitalize pt-1">The Redeemed christian church of god, easter campout 2020!!!</h4>
     <img class="block" style="width:100px; heigth:50px; border-radius:50px" src="{{ 'img/download.png' }}" alt="Logo">
     <p>Jesus christ the same yesterday, and today and forever</p>
-    <b><i>Hebrews 11:8</i> </b>
+    <b><i>Hebrews 13:8</i> </b>
     <hr>
     <div class="row">
 

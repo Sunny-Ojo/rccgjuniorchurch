@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\campers;
+use App\Teachers;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $teachers = Teachers::orderBy('created_at', 'asc')->paginate(10);
         $campers = campers::orderBy('created_at', 'asc')->paginate(10);
-        return view('home')->with('users', $campers);
+        return view('index')->with(['campers' => $campers, 'teachers' => $teachers]);
     }
 }
