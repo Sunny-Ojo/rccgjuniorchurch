@@ -10,8 +10,6 @@
 |
  */
 
-use App\campers;
-use App\Teachers;
 use Illuminate\Support\Facades\Hash;
 
 Route::get('/', function () {
@@ -21,15 +19,6 @@ Route::get('/hash', function () {
     $pass = 'admin123';
     $me = Hash::make($pass);
     return $me;
-});
-Route::get('/php', function () {
-    return phpinfo();
-});
-Route::get('/table', function () {
-    $teachers = Teachers::orderBy('created_at', 'asc')->paginate(10);
-    $campers = campers::orderBy('created_at', 'asc')->paginate(10);
-    return view('tables')->with(['campers' => $campers, 'teachers' => $teachers]);
-
 });
 
 Auth::routes();

@@ -5,14 +5,15 @@
 
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+   <!-- Page Heading -->
+   <hr>
+   <h1 class="h3 mb-2 text-gray-800 text-center text-success">Campers Board</h1>
+
+   <p class="mb-4">Here are the list of <b>Campers</b> that has registered for the campout .</p>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-      <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-      </div>
+
 
 
       @if (count($campers)> 0)
@@ -21,29 +22,18 @@
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                  <th>S/N</th>
                   <th>Surname</th>
                   <th>First Name</th>
                   <th>Action</th>
 
               </tr>
             </thead>
-            <tfoot>
-              <tr>
 
-                  <th>S/N</th>
-                  <th>Surname</th>
-                  <th>First Name</th>
-                  <th>Action</th>
-
-              </tr>
-            </tfoot>
             <tbody>
                 @foreach ($campers as $camper)
 
 
               <tr>
-                <td><h4>{{ $camper->id }}</h4></td>
                 <td><h4>{{ $camper->surname }}</h4></td>
                 <td><h4>{{ $camper->firstName }}</h4></td>
 

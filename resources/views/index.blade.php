@@ -29,7 +29,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div class="sidebar-brand-icon">
             <img style="height:30px;width:30px;border-radius:50px" src="{{asset('/img/download.png')}}" alt="">
         </div>
@@ -188,7 +188,7 @@
 
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a title="Campers" class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-user "></i>
                 @php
                     $campers = count($campers);
@@ -207,14 +207,14 @@
                     <div class="font-weight-bold">
                       <div class="text-truncate">@php
                           if($campers == 0){
-                                 echo 'No camper has registered';
+                                 echo ' No camper has registered';
 
                           }
                            elseif ($campers == 1) {
-                               echo $campers. 'camper has registered ';
+                               echo $campers. ' camper has registered ';
                            }
                            else {
-                               echo $campers. 'Campers have registered';
+                               echo $campers. ' Campers have registered';
                            }
                       @endphp
                       </div>
@@ -231,13 +231,13 @@
 
             <!-- Nav Item - Messages -->
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a title="Teachers"class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-user fa-fw"></i>
                 <!-- Counter - Messages -->
               <span class="badge badge-danger badge-counter">{{$teachers}}</span>
               </a>
               <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+              <div  class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">
                  Teachers Center
                 </h6>
@@ -267,7 +267,22 @@
                 </a>
                 </div>
             </li>
+            <li class="nav-item dropdown no-arrow mx-1">
 
+              <a title="Logout" class="nav-link dropdown-toggle" href="{{ route('logout') }}" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+
+                  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+
+                       <i
+                           class="fas fa-2x fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
+                       ></i>
+               </a>
+
+               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                   @csrf
+               </form>
+          </li>
 
           </ul>
 

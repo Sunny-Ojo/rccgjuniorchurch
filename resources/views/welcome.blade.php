@@ -46,7 +46,7 @@ body {
   {{-- <h2 class="breadcrumb">About this Program</h2>
 <div >
 
-   <p  align=""> Redeemed Christian Church of God Easter Campout for all Teenagers is a programme that  holds every year.
+<p  align=""> Redeemed Christian Church of God Easter Campout for all Teenagers is a programme that  holds every year.
     We encourage Parents to endeavour to allow their children to attend the Campout as it is for their own good.
 Today, God is still doing marvelous deeds through the Redeemed Christian Church of God, worldwide. One of
  the  well-known programs of the church is the Holy Ghost Service, an all night miracle service
@@ -54,7 +54,7 @@ Today, God is still doing marvelous deeds through the Redeemed Christian Church 
 </div>
 <hr> --}}
 
-      <p class="text-white badge-dark text-bold  pt-2 pb-2 ">&copy; 2019 - {{ date('Y') }}. RCCG Junior Church, All rights reserved...</p>
+      <p class="text-white badge-dark text-bold pt-lg-3 pb-lg-3  pt-2 pb-2 ">&copy; 2019 - {{ date('Y') }}. RCCG Junior Church, All rights reserved...</p>
 </div>
 
 
