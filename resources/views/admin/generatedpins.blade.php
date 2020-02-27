@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('title', ' list of generated pins')
     @section('content')
-    <a href="/admin" class="btn btn-secondary ">Back</a>
     <div class=" card-header">
                      <h3 class="breadcrumb"> Generated Pins</h3>
                      <p class="text-info"><b>Note: </b> These pins are showed according to the time they were generated </p>
@@ -11,15 +10,16 @@
                        @if (count($pins)> 0)
                        <table class="table text-center   table-bordered">
                            <tr>
-                             <th>id</th>
+
                              <th>pins</th>
                              <th>Used pins</th>
-                           </tr>
+                             <th>Used by </th>
+                            </tr>
                            @foreach ($pins as $pin)
                                <tr>
-                                   <td><h4>{{$pin->id}}</h4></td>
-                                   <td><h4>{{$pin->pins}}</h4></td>
-                                   <td><h4>{{$pin->used_pins}}</h4></td>
+                                   <td>{{$pin->pins}}</td>
+                                   <td>{{$pin->used_pins}}</td>
+                                   <td>{{$pin->surname. ' '}}{{$pin->firstName}}</td>
 
                                </tr>
                            @endforeach

@@ -39,7 +39,7 @@ body {
 <hr>
 
 
-      <p class="text-white badge-dark text-bold  pt-2 pb-2 ">&copy; 2019 - {{ date('Y') }}. RCCG Junior Church, All rights reserved...</p>
+      <p class="text-white badge-dark text-bold pt-lg-3 pb-lg-3  pt-2 pb-2 ">&copy; 2019 - {{ date('Y') }}. RCCG Junior Church, All rights reserved...</p>
 </div>
 
 

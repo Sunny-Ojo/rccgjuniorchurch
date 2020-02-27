@@ -29,10 +29,7 @@ body {
 
           <div class="form-group">
        {{ Form::text('pin', '', ['class'=> 'form-control', 'placeholder' => 'Pin']) }}
-         {{-- </div> --}}
-         {{-- <div class="form-group"> --}}
         {{ Form::submit('Proceed', ['class'=> 'mt-1 btn btn-primary float-left']) }}
-        {{-- <a href="/teachers/create" class="btn btn-warning mt-1 float-left ml-3">Are you a Teacher?</a> --}}
 
         </div>
  {!! Form::close() !!}

@@ -15,8 +15,10 @@ class CreatePinsTable extends Migration
     {
         Schema::create('pins', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('pins');
 
+            $table->string('pins');
+            $table->string('surname')->nullable();
+            $table->string('firstName')->nullable();
             $table->string('used_pins')->nullable();
 
             $table->timestamps();

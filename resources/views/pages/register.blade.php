@@ -70,7 +70,7 @@
               </div>
               <div class="form-group">
                 {{ Form::label('allergies', 'Any Allergies or Health Issues?') }}
-                {{ Form::textarea('allergies or Health issues', '', ['class'=>'form-control', 'placeholder'=>'Allergies? Tell us']) }}
+                {{ Form::textarea('allergies', '', ['class'=>'form-control', 'placeholder'=>'Allergies or Health issues? Tell us']) }}
               </div>
               <div class="form-group">
                 <button class="btn btn-primary btn-block  " type="submit" >Register</button>
