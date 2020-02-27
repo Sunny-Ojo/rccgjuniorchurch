@@ -20,6 +20,7 @@ class CreatePinsTable extends Migration
             $table->string('surname')->nullable();
             $table->string('firstName')->nullable();
             $table->string('used_pins')->nullable();
+            $table->string('admin');
 
             $table->timestamps();
         });

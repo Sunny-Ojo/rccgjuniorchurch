@@ -21,7 +21,7 @@
                                    <td>{{$pin->pins}}</td>
                                    <td>{{$pin->used_pins}}</td>
                                    <td>{{$pin->surname. ' '}}{{$pin->firstName}}</td>
-                               <td>{{auth()->user()->name}}</td>
+                               <td>{{$pin->admin}}</td>
 
                                </tr>
                            @endforeach

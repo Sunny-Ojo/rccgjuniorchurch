@@ -76,13 +76,13 @@ class PagesController extends Controller
         $details->zone = $request->zone;
         $details->parish = $request->parish;
         $details->gender = $request->gender;
-
+        $admin = auth()->user()->name;
         $details->dob = $request->dob;
         $details->passport = $imgtoDb;
         $details->allergies = $request->allergies;
 
         DB::update('update pins set used_pins = ? where id = ?', ['yes', $pin_id]);
-        DB::update('update pins set surname = ?, firstName = ? where id = ?', [$surname, $firstName, $pin_id]);
+        DB::update('update pins set surname = ?, firstName = ?, admin = ? where id = ?', [$surname, $firstName, $admin, $pin_id]);
         $details->save();
         $request->session()->flush();
         return redirect('/')->with("success", "Thank you for registering for the Easter campout 2020...
@@ -114,6 +114,7 @@ class PagesController extends Controller
                 $result = substr(str_shuffle(str_repeat($pool, 6)), 0, 6);
                 $pins = new pin();
                 $pins->pins = $result;
+                $pins->admin = auth()->user()->name;
                 $pins->save();
             }
             return redirect('/admin')->with('success', 'successfully generated and sent ');
