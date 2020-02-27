@@ -34,7 +34,7 @@
         <div class="sidebar-brand-icon">
             <img style="height:30px;width:30px;border-radius:50px" src="{{asset('/img/download.png')}}" alt="">
         </div>
-        <div class="sidebar-brand-text mx-3"> Admin</div>
+    <div class="sidebar-brand-text mx-3"> {{auth()->user()->name}}</div>
       </a>
 
       <!-- Divider -->
