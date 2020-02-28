@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\campers;
-use App\teachers;
+use App\Teachers;
 use DB;
 use Illuminate\Http\Request;
 
