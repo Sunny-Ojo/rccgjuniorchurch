@@ -88,6 +88,7 @@
         </a>
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
+
             <a class="collapse-item" href="/pin">Generate Pins</a>
             <a class="collapse-item" href="/generatedPins">VIew Generated Pins</a>
           </div>
