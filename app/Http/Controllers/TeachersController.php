@@ -23,7 +23,9 @@ class TeachersController extends Controller
     {
         $teachers = Teachers::orderBy('created_at', 'asc')->paginate(10);
         $campers = campers::orderBy('created_at', 'asc')->paginate(10);
-        return view('teachers.index')->with(['campers' => $campers, 'teachers' => $teachers]);
+        $getPins = DB::select('select * from pins ');
+
+        return view('teachers.index')->with(['campers' => $campers, 'teachers' => $teachers, 'adminPins' => $getPins]);
     }
 
     /**
@@ -74,13 +76,17 @@ class TeachersController extends Controller
         $teachers->title = $request->Title;
         $teachers->position = $request->Position;
         $teachers->surname = $request->surname;
+        $surname = $request->surname;
         $teachers->firstName = $request->firstName;
+        $firstName = $request->firstName;
         $teachers->gender = $request->gender;
         $teachers->department = $request->Department;
         $teachers->passport = $imgtoDb;
+
         DB::update('update pins set used_pins = ? where id = ?', ['yes', $pin_id]);
-        $request->session()->flush();
+        DB::update('update pins set surname = ?, firstName = ? where id = ?', [$surname, $firstName . ' (Teacher)', $pin_id]);
         $teachers->save();
+        $request->session()->flush();
         return redirect('/')->with("success", "Thank you for registering for the Easter campout 2020...
         Please kindly know that if there's any need for you to update your details, you'll need to contact your area coordinator. Have a lovely campout!!!
         You can now exit");

@@ -22,7 +22,9 @@
 </head>
 
 <body id="page-top">
-
+    @php
+    $allPins = count($adminPins)
+@endphp
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -36,7 +38,6 @@
         </div>
     <div class="sidebar-brand-text mx-3"> {{auth()->user()->name}}</div>
       </a>
-
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
@@ -90,7 +91,8 @@
           <div class="bg-white py-2 collapse-inner rounded">
 
             <a class="collapse-item" href="/pin">Generate Pins</a>
-            <a class="collapse-item" href="/generatedPins">VIew Generated Pins</a>
+
+            <a class="collapse-item" href="/generatedpins">View Generated Pins  <span class="bg-danger text-white p-1">{{ $allPins }}</span></a>
           </div>
         </div>
       </li>
@@ -112,10 +114,8 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Logout screen:</h6>
-          <a class="collapse-item" href="{{ route('logout') }}"
-
-          onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
+          <a class="collapse-item" href="{{ url('/logoutadmin') }}"
+>
 
                <i
                    class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
@@ -193,6 +193,11 @@
             </li>
 
             <!-- Nav Item - Alerts -->
+            <li class="nav-item dropdown no-arrow mx-1">
+                <a title="Homepage" class="nav-link " href="/" id="" role="link" data-toggle="" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-home fa-1x"></i>
+                </a>
+            </li>
             <li class="nav-item dropdown no-arrow mx-1">
               <a title="Campers" class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-user "></i>
@@ -275,19 +280,14 @@
             </li>
             <li class="nav-item dropdown no-arrow mx-1">
 
-                <a title="Logout" class="nav-link dropdown-toggle" href="{{ route('logout') }}" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                <a title="Logout" class="nav-link dropdown-toggle" href="{{ url('/logoutadmin') }}" >
 
-                    onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();">
-
-                         <i
-                             class="fas fa-2x fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
-                         ></i>
+                  <i
+                  class="fas fa-sign-out-alt fa-2x fa-fw mr-2 text-gray-400"
+              ></i>
                  </a>
 
-                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                     @csrf
-                 </form>
+                 
             </li>
 
           </ul>
@@ -299,8 +299,8 @@
         <div class="container-fluid">
 
            <h4 class=" "> Easter Campout 2020</h4>
-     @yield('content')
- @include('layouts.msg')
+     @include('layouts.msg')
+ @yield('content')
 
         </div>
         <!-- /.container-fluid -->

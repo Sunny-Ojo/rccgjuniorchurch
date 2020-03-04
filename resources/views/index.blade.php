@@ -21,7 +21,9 @@
 </head>
 
 <body id="page-top">
-
+@php
+    $allPins = count($adminPins)
+@endphp
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -88,7 +90,7 @@
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="/pin">Generate Pins</a>
-            <a class="collapse-item" href="/generatedPins">VIew Generated Pins</a>
+            <a class="collapse-item" href="/generatedpins">View Generated Pins <span class="bg-danger text-white p-1">{{ $allPins }}</span></a>
           </div>
         </div>
       </li>
@@ -110,15 +112,13 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Logout screen:</h6>
-          <a class="collapse-item" href="{{ route('logout') }}"
-          onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-           {{ __('Logout') }}
+          <a class="collapse-item" href="{{ url('/logoutadmin') }}">
+            <i
+                   class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
+               ></i> {{ __('Logout') }}
        </a>
 
-       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-           @csrf
-       </form>
+     
 
           </div>
         </div>
@@ -188,6 +188,11 @@
 
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
+                <a title="Homepage" class="nav-link " href="/" id="" role="link" data-toggle="" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-home fa-1x"></i>
+                </a>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
               <a title="Campers" class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-user "></i>
                 @php
@@ -202,7 +207,7 @@
                 <h6 class="dropdown-header">
                  Campers Center
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="">
+                <a class="dropdown-item d-flex align-items-center" href="/campers">
 
                     <div class="font-weight-bold">
                       <div class="text-truncate">@php
@@ -241,7 +246,7 @@
                 <h6 class="dropdown-header">
                  Teachers Center
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="">
+                <a class="dropdown-item d-flex align-items-center" href="/teachers">
 
                   <div class="font-weight-bold">
                     <div class="text-truncate">@php
@@ -253,7 +258,7 @@
                              echo $teachers. ' teacher has registered ';
                          }
                          else {
-                             echo $teachers. ' have registered';
+                             echo $teachers. ' teachers have registered';
                          }
                     @endphp
                     </div>
@@ -269,19 +274,12 @@
             </li>
             <li class="nav-item dropdown no-arrow mx-1">
 
-              <a title="Logout" class="nav-link dropdown-toggle" href="{{ route('logout') }}" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-
-                  onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-
-                       <i
-                           class="fas fa-2x fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
-                       ></i>
+              <a title="Logout" class="nav-link dropdown-toggle" href="{{ url('/logoutadmin') }}">
+                <i
+                class="fas fa-sign-out-alt fa-2x fa-fw mr-2 text-gray-400"
+            ></i>
                </a>
 
-               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                   @csrf
-               </form>
           </li>
 
           </ul>
@@ -295,14 +293,26 @@
            <h4 class=""> Easter Campout 2020</h4>
            @include('layouts.msg')
         <div class="jumbotron text-dark text-center">
-            <h1 class="text-success xs">Welcome Admin !!!</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-6">
+                <img src="{{asset('/img/admin2.jpg')}} "style="width:100%;height:100%" alt="welcome image for admin">
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <h1 class="text-success xs text-uppercase">Welcome {{ auth()->user()->name }},</h1>
+                    <h5 class="text-primary">We are proud to have you as an <b class="text-danger">ADMIN</b> for this campout</h5>
+                    <h6>Here you can manage all the teenagers that has registered.
+                    you can view, edit and print out their slips</h6>
+                </div>
+
+            </div>
+            {{-- <h1 class="text-success xs">Welcome Admin !!!</h1>
             <h5 class="text-primary">We are proud to have you as an Admin for this campout</h5>
             <h6>Here you can manage all the teenagers that has registered.
-            you can view, edit and print out their slips</h6>
+            you can view, edit and print out their slips</h6> --}}
         </div>
         <div class="row mt-5 ">
 
-            <div class="col-md-5 col-lg-6">
+            <div class="col-md-5 col-lg-6 "align="center">
                 <a class="btn btn-lg btn-danger" href="/teachers">
                @php
                     if($teachers == 0){
@@ -313,12 +323,12 @@
                              echo $teachers. ' teacher has registered ';
                          }
                          else {
-                             echo $teachers. ' have registered';
+                             echo $teachers. ' teachers have registered';
                          }
                @endphp
             </a>
             </div>
- <div class="col-md-5 col-lg-6">
+ <div class="col-md-5 col-lg-6"align="center">
               <a class="btn btn-lg btn-primary" href="/campers">
                   @php
                        if($campers == 0){

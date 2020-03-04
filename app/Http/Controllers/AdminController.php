@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\campers;
 use App\Teachers;
+use DB;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -22,7 +23,9 @@ class AdminController extends Controller
     {
         $teachers = Teachers::orderBy('created_at', 'asc')->paginate(10);
         $campers = campers::orderBy('created_at', 'asc')->paginate(10);
-        return view('index')->with(['campers' => $campers, 'teachers' => $teachers]);
+        $getPins = DB::select('select * from pins ');
+
+        return view('index')->with(['campers' => $campers, 'teachers' => $teachers, 'adminPins' => $getPins]);
     }
 
     /**
@@ -84,7 +87,7 @@ class AdminController extends Controller
             'surname' => 'required',
             'firstName' => 'required',
             'parentsName' => 'required',
-            'parentsPhone' => 'required|min:11',
+            'parentsPhone' => 'required',
             'area' => 'required',
             'zone' => 'required',
             'parish' => 'required',

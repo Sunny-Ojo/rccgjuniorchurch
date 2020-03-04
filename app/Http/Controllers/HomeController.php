@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\campers;
 use App\Teachers;
+use DB;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,8 @@ class HomeController extends Controller
     {
         $teachers = Teachers::orderBy('created_at', 'asc')->paginate(10);
         $campers = campers::orderBy('created_at', 'asc')->paginate(10);
-        return view('index')->with(['campers' => $campers, 'teachers' => $teachers]);
+        $getPins = DB::select('select * from pins ');
+
+        return view('index')->with(['campers' => $campers, 'teachers' => $teachers, 'adminPins' => $getPins]);
     }
 }
