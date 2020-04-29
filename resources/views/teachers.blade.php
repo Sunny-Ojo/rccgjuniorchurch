@@ -62,12 +62,11 @@ ___________________________________________________________<br>
 
         </div>
         <div class="col-md-4 col-lg-4">
-        <img class="image" style="width:60mm; height:45mm" src="{{ public_path('/storage/passports/'.$users->passport) }}" alt="Passport">
+        <img class="image" style="width:60mm; height:50mm" src="{{ public_path('/storage/passports/'.$users->passport) }}" alt="Passport">
         </div>
         <br>
 
-        <p class="left">__________________ <br>Pastor's signature</p>
-        <p class="right">______________________ <br>Area Co-ordinators signature</p>
+        <p class="right">______________________ <br>Mummy PICP's signature</p>
 
 
                    </div>

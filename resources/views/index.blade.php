@@ -33,7 +33,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div class="sidebar-brand-icon">
-            <img style="height:30px;width:30px;border-radius:50px" src="{{asset('/img/download.png')}}" alt="">
+            <i class="ml-3 fa fa-user-shield"></i>
         </div>
     <div class="sidebar-brand-text mx-3"> {{auth()->user()->name}}</div>
       </a>
@@ -118,7 +118,7 @@
                ></i> {{ __('Logout') }}
        </a>
 
-     
+
 
           </div>
         </div>
@@ -151,40 +151,18 @@
             <i class="fa fa-bars"></i>
           </button>
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
 
+  <li class="nav-item dropdown no-arrow  list-unstyled">
+                <a title="" class="nav-link " href="/admin" id="" role="link" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                    <img style="height:40px;width:40px;border-radius:50px" src="{{asset('/img/download.png')}}" alt="Rccg Logo">
+
+                </a>
+            </li>
           <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto mr-5">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text"  class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </li>
+
 
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
@@ -194,7 +172,7 @@
             </li>
             <li class="nav-item dropdown no-arrow mx-1">
               <a title="Campers" class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-user "></i>
+                <i class="fas fa-users fa-2x"></i>
                 @php
                     $campers = count($campers);
                     $teachers = count($teachers);
@@ -237,7 +215,7 @@
             <!-- Nav Item - Messages -->
             <li class="nav-item dropdown no-arrow mx-1">
               <a title="Teachers"class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-user fa-fw"></i>
+                <i class="fas fa-user fa-fw fa-2x"></i>
                 <!-- Counter - Messages -->
               <span class="badge badge-danger badge-counter">{{$teachers}}</span>
               </a>
@@ -290,15 +268,15 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-           <h4 class=""> Easter Campout 2020</h4>
-           @include('layouts.msg')
+            <h1 class="lead bg-gradient-dark text-white text-center p-2 " style="border-radius:20px"><marquee behavior="" direction="left">Welcome to 2020 Easter Campout Admin Dashboard. </marquee></h1>
+            @include('layouts.msg')
         <div class="jumbotron text-dark text-center">
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-6">
                 <img src="{{asset('/img/admin2.jpg')}} "style="width:100%;height:100%" alt="welcome image for admin">
                 </div>
                 <div class="col-md-6 col-lg-6">
-                    <h1 class="text-success xs text-uppercase">Welcome {{ auth()->user()->name }},</h1>
+                    <h1 class="text-success xs text-uppercase lead mt-2">Welcome {{ auth()->user()->name }},</h1>
                     <h5 class="text-primary">We are proud to have you as an <b class="text-danger">ADMIN</b> for this campout</h5>
                     <h6>Here you can manage all the teenagers that has registered.
                     you can view, edit and print out their slips</h6>
@@ -310,11 +288,52 @@
             <h6>Here you can manage all the teenagers that has registered.
             you can view, edit and print out their slips</h6> --}}
         </div>
-        <div class="row mt-5 ">
+        <div class="row my-5 ">
+            <div class="col-lg-6 col-md-6 mb-4">
+                <div class="card border-left-danger shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                              <a class="btn btn-lg btn-danger p-2" href="/campers">
+              @php
+                   if($campers == 0){
+                             echo 'No camper has registered';
 
-            <div class="col-md-5 col-lg-6 "align="center">
-                <a class="btn btn-lg btn-danger" href="/teachers">
-               @php
+                      }
+                       elseif ($campers == 1) {
+                           echo $campers. ' camper has registered ';
+                       }
+                       else {
+                           echo $campers. ' Campers have registered';
+                       }
+              @endphp
+          </a>
+
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Total number of registered Campers</div>
+
+                      </div>
+                      <div class="col-auto">
+                        <i class="fa fa-users fa-3x text-gray-300 text-center"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                <a class="btn btn-lg btn-success p-2" href="/teachers">
+
+                                     @php
                     if($teachers == 0){
                                echo 'No Teacher has registered';
 
@@ -326,25 +345,21 @@
                              echo $teachers. ' teachers have registered';
                          }
                @endphp
-            </a>
-            </div>
- <div class="col-md-5 col-lg-6"align="center">
-              <a class="btn btn-lg btn-primary" href="/campers">
-                  @php
-                       if($campers == 0){
-                                 echo 'No camper has registered';
 
-                          }
-                           elseif ($campers == 1) {
-                               echo $campers. ' camper has registered ';
-                           }
-                           else {
-                               echo $campers. ' Campers have registered';
-                           }
-                  @endphp
-              </a>
+        </a>
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Total number of registered Campers</div>
 
-            </div>
+                          </div>
+                          <div class="col-auto ">
+                            <i class="fa fa-user-alt fa-3x text-gray-300 text-center" ></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
         </div>
         <!-- /.container-fluid -->
 
@@ -361,8 +376,6 @@
       </footer>
       <!-- End of Footer -->
 
-    </div>
-    <!-- End of Content Wrapper -->
 
   </div>
   <!-- End of Page Wrapper -->

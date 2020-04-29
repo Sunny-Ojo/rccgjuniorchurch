@@ -106,7 +106,7 @@ class PagesController extends Controller
             'parish' => 'required',
             'dob' => 'required',
             'passport' => 'image|required',
-            'allergies' => 'nullable',
+            'allergies' => 'required',
 
         ]);
         if ($request->hasFile('passport')) {

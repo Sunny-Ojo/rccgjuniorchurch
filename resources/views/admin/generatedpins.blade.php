@@ -2,8 +2,8 @@
 @section('title', ' list of generated pins')
     @section('content')
     <div class=" card-header">
-                     <h3 class="breadcrumb"> Generated Pins</h3>
-                     <p class="text-info"><b>Note: </b> These pins are showed according to the time they were generated </p>
+                     {{-- <h1 class=" lead breadcrumb"> Generated Pins</h1> --}}
+                     <p class="text-info text-small"><b>Note: </b> These pins are showed according to the time they were generated. </p>
                  <hr>
                     </div>
                    <div  class="card-body text-center">

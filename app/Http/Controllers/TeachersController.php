@@ -160,7 +160,7 @@ class TeachersController extends Controller
         }
         $teachers->save();
 
-        return redirect('/teachers')->with('success', 'Profile was updated successfully');
+        return redirect()->route('teachers.show', $id)->with('success', 'Profile was updated successfully');
     }
 
     /**

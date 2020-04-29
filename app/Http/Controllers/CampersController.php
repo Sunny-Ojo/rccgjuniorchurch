@@ -125,7 +125,7 @@ class CampersController extends Controller
         $details->allergies = $request->allergies;
         $details->save();
 
-        return redirect('/admin')->with('success', 'Update was successful');
+        return redirect()->route('campers.show', $id)->with('success', 'Update was successful');
 
     }
 

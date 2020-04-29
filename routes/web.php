@@ -9,24 +9,22 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
+
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/hash', function () {
-    $pass = 'admin123';
-    $me = Hash::make($pass);
-    return $me;
-});
+
 Route::get('/logoutadmin', function () {
     Auth::logout();
     return redirect('/');
 })->name('logoutadmin');
 
-Auth::routes();
+// Auth::routes();
 
+Route::get('/teachers/download', 'ExportController@teachers');
+Route::get('/campers/download', 'ExportController@campers');
 Route::get('/pinsfromadmins', 'PinsController@getPinsFromEachAdmin');
 Route::resource('admin', 'AdminController');
 Route::resource('campers', 'CampersController');
