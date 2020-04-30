@@ -209,11 +209,10 @@
                 </div>
             </div> <!-- row -->
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-features text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                <div  class="col-lg-4 col-md-6 col-sm-8">
+                    <div style="border-radius:20px"class="single-pricing text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="features-icon">
-                            <i class="lni-microphone"></i>
-                            <span>01</span>
+                            <h1 class=""> <i class=" text-danger  lni-microphone"></i></h1>
                         </div>
                         <div class="features-content">
                             <h4 class="features-title"><a href="#">Great Speakers</a></h4>
@@ -223,11 +222,10 @@
                         </div>
                     </div> <!-- single features -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-features text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div  class="col-lg-4 col-md-6 col-sm-8">
+                    <div style="border-radius:20px"class="single-pricing text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="features-icon">
-                            <i class="lni-users"></i>
-                            <span>02</span>
+                            <h1 class=""> <i class=" text-danger  lni-users"></i></h1>
                         </div>
                         <div class="features-content">
                             <h4 class="features-title"><a href="#">New People</a></h4>
@@ -235,11 +233,10 @@
                         </div>
                     </div> <!-- single features -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-features text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
+                <div  class="col-lg-4 col-md-6 col-sm-8">
+                    <div style="border-radius:20px"class="single-pricing text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
                         <div class="features-icon">
-                            <i class="lni-bullhorn"></i>
-                            <span>03</span>
+                            <h1 class=""> <i class=" text-danger  lni-bullhorn"></i></h1>
                         </div>
                         <div class="features-content">
                             <h4 class="features-title"><a href="#">Global Event</a></h4>
@@ -247,11 +244,10 @@
                         </div>
                     </div> <!-- single features -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-features text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div  class="col-lg-4 col-md-6 col-sm-8">
+                    <div style="border-radius:20px" class="single-pricing text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="features-icon">
-                            <i class="lni-heart"></i>
-                            <span>04</span>
+                           <h1 class=""> <i class=" text-danger  lni-heart"></i></h1>
                         </div>
                         <div class="features-content">
                             <h4 class="features-title"><a href="#">Get Inspired</a></h4>
@@ -259,25 +255,23 @@
                         </div>
                     </div> <!-- single features -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-features text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
+                <div  class="col-lg-4 col-md-6 col-sm-8" >
+                    <div style="border-radius:20px" class="single-pricing text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
                         <div class="features-icon">
-                            <i class="lni-cup"></i>
-                            <span>05</span>
+                           <h1> <i class="lni-cup text-danger"></i></h1>
                         </div>
-                        <div class="features-content">
-                            <h4 class="features-title"><a href="#">Sports Activities</a></h4>
+                        <div class="">
+                            <h4 class="pricing-title"><a href="#">Sports Activities</a></h4>
                             <p class="text">There will be outdoor activities like <b>Football</b>,
                                 <b>Tennis</b>, <b>Chess</b> and other sports activities
                                 .</p>
                         </div>
                     </div> <!-- single features -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-features text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="1.5s">
+                <div  class="col-lg-4 col-md-6 col-sm-8">
+                    <div style="border-radius:20px" class="single-pricing text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="1.5s">
                         <div class="features-icon">
-                            <i class="lni-gallery"></i>
-                            <span>06</span>
+                            <h1 class=""> <i class=" text-danger  lni-gallery"></i></h1>
                         </div>
                         <div class="features-content">
                             <h4 class="features-title"><a href="#">Meet New Faces</a></h4>
@@ -300,7 +294,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class=" text-center pb-10 card-body my-5 py-5 wow fadeIn"style="border:2px solid lightblue" data-wow-duration="1s" data-wow-delay="1.5s">
+                    <div class=" text-center pb-10 card-body my-5 py-5 wow fadeInLeft"style="border:2px solid lightblue" data-wow-duration="1s" data-wow-delay="1.5s">
                         <h2 class="text-white">3 Days Event</h2>
                         <p class="text-white pt-5">RCCG Easter Camp out lasts for 3 days but has the capacity to
                             change your life physically, intellectually and spiritually...</p>
@@ -347,7 +341,7 @@
                     </div> <!-- row -->
                     <div class=" pt-50  text-center text-white">
 
-                     <p class="text"> <a href="/disclaimer " class="text-white">Disclaimer</a></p>
+                     {{-- <p class="text"> <a href="/disclaimer " class="text-white">Disclaimer</a></p> --}}
                         &copy; 2019 - {{ date('Y') }}. RCCG Junior Church, All rights
                         reserved...
                     </div>
