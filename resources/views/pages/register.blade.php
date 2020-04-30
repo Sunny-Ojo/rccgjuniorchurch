@@ -1,30 +1,11 @@
 @extends('layouts.nav')
 @section('title', 'Welcome | Register')
-<script>
-    Webcam.set({
-        width: 350,
-        height: 350,
-        image_format: 'jpeg',
-        jpeg_quality: 90
-    })
-
-    Webcam.attach('#picture')
-
-
-    function take_passport(){
-
-    }
-</script>
 
 <style>
     .form-control{
         box-shadow: none!important;
     }
-    #camera{
-        width: 350px;
-        height: 350px;
-        border: 1px solid black;
-    }
+
 </style>
     @section('content')
     <br>
@@ -110,11 +91,12 @@
                   <div class="form-group">
            {{ Form::label('passport', 'Upload your Passport:') }} <br>
            {{ Form::file('passport') }} <br>
-           <div id="picture" class="picture"></div>
-           <button onclick="take_passport()" class="btn btn-secondary mt-1 btn-sm">Take Passport</button>
+           <button  onclick="take_passport()" class="btn btn-secondary mt-1 btn-sm">Take Passport</button>
            @error('passport') <li class="text-danger">{{$message}}</li> @enderror
 
         </div>
+                   {{-- <div id="camera" class="picture d-none"> </div> --}}
+
                   <div class="form-group">
                     {{ Form::label('allergies', 'Any Allergies or Health Issues?') }}
                     {{ Form::textarea('allergies', '', ['class'=>'form-control', 'placeholder'=>'Allergies or Health issues? Tell us']) }}
@@ -123,33 +105,17 @@
                 </div>
 
                   <div class="form-group">
-                    <button class="btn btn-primary btn-block  " type="submit" >Register</button>
+                    <button class="btn btn-primary btn-block  "  type="submit" >Register</button>
 
                   </div>
 
                   {!! Form::close() !!}
                   </div>
+                  <div class="card-footer text-center">&copy; 2019 - {{ date('Y') }}, RCCG Junior Church, All rights reserved...</div>
 
           </div>
             </div>
 
         </div>
-        <p class="text-center pt-3 pb-3 bg-dark text-white ">&copy; 2019 - {{ date('Y') }}, RCCG Junior Church, All rights reserved...</p>
 
 @endsection
-<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
-<script>
-    Webcam.set({
-        width: 350,
-        height: 350,
-        image_format: 'jpeg',
-        jpeg_quality: 90
-    })
-
-    Webcam.attach('.picture')
-
-
-    function take_passport(){
-
-    }
-</script>

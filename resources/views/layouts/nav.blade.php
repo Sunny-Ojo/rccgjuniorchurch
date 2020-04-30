@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/download.png')}}" class="rounded-circle">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,7 +22,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md  sticky-top navbar-dark bg-dark shadow-sm">
             <a class="navbar-brand" href="{{ url('/') }}">
                  Easter Campout
                 </a>
@@ -37,7 +38,10 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-  <li class="nav-item">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/campout/form">Teenagers</a>
+                        </li>
+                        <li class="nav-item">
                                 <a class="nav-link" href="/register/teacher">Teachers</a>
                             </li>
                         @guest

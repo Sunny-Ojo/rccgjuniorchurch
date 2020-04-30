@@ -193,20 +193,18 @@ class PagesController extends Controller
         $checkPin = DB::select('select pins AND used_pins from pins where pins = ? AND used_pins = ?', [$pin, 'yes']);
         $checkOnlyPin = DB::select('select * from pins where pins = ?', [$pin]);
         if ($checkPin == true) {
-            return redirect('/')->with('error', 'Sorry, this pin has  already been used, however if you would like to update your details you can contact your area co-ordinator... Thanks.');
+            return redirect('/campout/form')->with('error', 'Sorry, this pin has  already been used, however if you would like to update your details you can contact your area co-ordinator... Thanks.');
         } elseif ($checkOnlyPin == true) {
             foreach ($checkOnlyPin as $checkers) {
                 $pin_id = $checkers->id;
                 $request->session()->put('access', 'true');
                 $request->session()->put('pin_id', $pin_id);
 
-                //
-                //         DB::update('update pins set used_pins = ? where id = ?', ['yes', $pin_id]);
                 return redirect('/campout/register');
             }
 
         } else {
-            return redirect('/')->with('error', 'invalid pin');
+            return redirect('/campout/form')->with('error', 'invalid pin');
         }
 
     }
@@ -233,6 +231,8 @@ class PagesController extends Controller
     {
         return view('teachers.teachersPin');
     }
+
+    //validating teachers pin
     public function confirmPin(Request $request)
     {
         $this->validate($request, [

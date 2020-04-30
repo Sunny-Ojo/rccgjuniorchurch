@@ -22,14 +22,18 @@ Route::get('/logoutadmin', function () {
 })->name('logoutadmin');
 
 // Auth::routes();
-
+Route::get('/campout/form', function () {
+    return view('campoutpinform');
+});
+Route::get('disclaimer', function () {
+    return view('disclaimer');
+});
 Route::get('/teachers/download', 'ExportController@teachers');
 Route::get('/campers/download', 'ExportController@campers');
 Route::get('/pinsfromadmins', 'PinsController@getPinsFromEachAdmin');
 Route::resource('admin', 'AdminController');
 Route::resource('campers', 'CampersController');
 Route::resource('teachers', 'TeachersController');
-Route::post('/teacherSearch', 'SearchController@teachers');
 Route::resource('registration', 'RegistrationController');
 Route::post('/check', 'PagesController@check');
 Route::get('/campout/register', 'PagesController@campout')->name('campout');

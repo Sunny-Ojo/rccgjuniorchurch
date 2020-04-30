@@ -28,8 +28,8 @@
     <hr />
     <div class="row">
         <div class="col-md-8 col-lg-8 offset-md-2">
-            <h4 class="float-left text-danger">Enter your pin to proceed. (<span class="text-info">Teachers Only</span>)</h4>
-            {!! Form::open(['action' => 'PagesController@confirmPin', 'method' =>
+            <h4 class="float-left text-danger">Enter your pin to proceed. (<span class="text-info">Teenagers Only</span>)</h4>
+            {!! Form::open(['action' => 'PagesController@check', 'method' =>
             'POST'],['class'=>'bg-dark']) !!} {{ csrf_field() }}
 
             <div class="form-group">

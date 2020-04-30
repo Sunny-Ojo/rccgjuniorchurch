@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/download.png')}}" class="rounded-circle">
 
   <title>@yield('title', 'Admin Dashboard')</title>
 
@@ -167,7 +168,7 @@
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
                 <a title="Homepage" class="nav-link " href="/" id="" role="link" data-toggle="" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-home fa-1x"></i>
+              <i class="fa fa-home fa-2x"></i>
                 </a>
             </li>
             <li class="nav-item dropdown no-arrow mx-1">
@@ -279,7 +280,7 @@
                     <h1 class="text-success xs text-uppercase lead mt-2">Welcome {{ auth()->user()->name }},</h1>
                     <h5 class="text-primary">We are proud to have you as an <b class="text-danger">ADMIN</b> for this campout</h5>
                     <h6>Here you can manage all the teenagers that has registered.
-                    you can view, edit and print out their slips</h6>
+                    you can view, edit and print out their slips.</h6>
                 </div>
 
             </div>
@@ -348,7 +349,7 @@
 
         </a>
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">Total number of registered Campers</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Total number of registered Teachers</div>
 
                           </div>
                           <div class="col-auto ">
