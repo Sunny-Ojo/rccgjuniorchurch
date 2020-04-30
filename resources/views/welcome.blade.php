@@ -331,10 +331,9 @@
                                 <h5 class="f-title">Social Platforms</h5>
                                 <p class="text">Don't be left out!  connect with us on social platforms for Any Proper Updates Anytime.</p>
                                 <ul class="social">
-                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni-twitter-original"></i></a></li>
-                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                                    <li><a href="#"><i class="lni-instagram-original"></i></a></li>
+                                    <li><a href="https://web.facebook.com/rccgtodpteens/"><i class="lni-facebook-filled"></i></a></li>
+                                    <li><a href="https://twitter.com/rccghq"><i class="lni-twitter-original"></i></a></li>
+                                    <li><a href="https://www.instagram.com/rccglp33teens/"><i class="lni-instagram-original"></i></a></li>
                                 </ul>
                             </div>
                         </div>
