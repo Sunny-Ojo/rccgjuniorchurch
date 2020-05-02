@@ -58,7 +58,12 @@ class CampersController extends Controller
     public function show($id)
     {
         $user = campers::find($id);
-        return view('campers.show')->with(['campers' => $user, 'layouts' => 'show']);
+
+        $teachers = Teachers::orderBy('created_at', 'asc')->paginate(10);
+        $campers = campers::orderBy('created_at', 'asc')->paginate(10);
+        $getPins = DB::select('select * from pins ');
+
+        return view('campers.show')->with(['camper' => $user, 'campers' => $campers, 'teachers' => $teachers, 'adminPins' => $getPins]);
     }
 
     /**
@@ -70,7 +75,13 @@ class CampersController extends Controller
     public function edit($id)
     {
         $user = campers::find($id);
-        return view('campers.edit')->with(['campers' => $user, 'layouts' => 'edit']);
+
+        $teachers = Teachers::orderBy('created_at', 'asc')->paginate(10);
+        $campers = campers::orderBy('created_at', 'asc')->paginate(10);
+        $getPins = DB::select('select * from pins ');
+
+        return view('campers.edit')->with(['camper' => $user, 'campers' => $campers, 'teachers' => $teachers, 'adminPins' => $getPins]);
+
     }
 
     /**

@@ -274,7 +274,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-        <h1 class="lead bg-gradient-dark text-white text-center p-2 " style="border-radius:20px"><marquee behavior="" direction="left">Welcome to 2020 Easter Campout Admin Dashboard. </marquee></h1>
+        {{-- <h1 class="lead bg-gradient-dark text-white text-center p-2 " style="border-radius:20px"><marquee behavior="" direction="left">Welcome to 2020 Easter Campout Admin Dashboard. </marquee></h1> --}}
 
             @include('layouts.msg')
  @yield('content')

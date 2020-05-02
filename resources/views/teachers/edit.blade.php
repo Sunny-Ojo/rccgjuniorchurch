@@ -1,4 +1,4 @@
-@extends('layouts.nav')
+@extends('layouts.admin')
 @section('title', 'Update Profile')
 <style>
     .form-control{
@@ -6,12 +6,10 @@
     }
 </style>
     @section('content')
-    <br>
+    <div class="card-body">
+  <p style="border-radius:20px" class="lead bg-dark p-1  text-monospace text-center   text-white"> Update {{$users->firstName}} {{$users->surname}}'s Profile</p>
        <div class="row justify-content-center">
-           <div class="col-md-7 col-xs-12">
-               <div class="card my-5">
-                   <div class="card-header">  <h1 class="lead text-center "> Update {{$users->firstName}} {{$users->surname}}'s Profile</h1>
-                      </div>
+           <div class="col-md-8 col-xs-12">
                        <div class="card-body">
                        <form action="{{route('teachers.update', $users->id)}}" method="post" enctype="multipart/form-data">
                    @csrf
@@ -101,10 +99,9 @@
                     </form>
                 </div>
 
-                     <div class="card-footer text-center">&copy; 2019 - {{ date('Y') }}, RCCG Junior Church, All rights reserved...</div>
 
                </div>
                           </div>
-  </div>
+                       </div>
 
 @endsection

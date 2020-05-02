@@ -182,7 +182,7 @@
                             <h2 class="title lead">About RCCG Easter Campout</h2>
                         </div> <!-- section title -->
 
-                        <p class="text mt-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. <br> <br> Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        <p class="text mt-30">RCCG Easter Camp-out seeks, through its programs, to meet the spiritual, social, physical, mental, educational and recreational needs of its campers by providing Biblical instruction, social interaction, recreational activities, good food, rest and mental stimulation to the end that campers will have a personal relationship through Jesus Christ and experience growth in their Christian life.</p>
                         <p class="date"><span>10<sup>th</sup></span>  - <span>13<sup>th</sup></span> April 2020.</p>
                     </div> <!-- about content -->
                 </div>
