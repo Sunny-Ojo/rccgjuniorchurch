@@ -138,7 +138,7 @@
 
 
     <div class="text-center mt-5" ><h1 class="lead">Countdown Timer for the event</h1>
-    <div data-countdown="2020/06/01"></div>
+    <div data-countdown="2020/11/01"></div>
 </div>
 {{-- COUNTDOWN  PART ENDS --}}
 
