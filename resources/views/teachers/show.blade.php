@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title', 'View Profile')
     @section('content')
-          <h1 style="border-radius:20px" class="lead bg-dark p-2  text-monospace text-center   text-white">{{ $users->surname }} {{ $users->firstName }}'s Profile</h1>
+          <h1 style="border-radius:20px;" class="lead bg-dark p-2  text-monospace text-center   text-white">{{ $users->surname }} {{ $users->firstName }}'s Profile</h1>
 
                   <div class="card-body">
                   <div class="row justify-content-center">
