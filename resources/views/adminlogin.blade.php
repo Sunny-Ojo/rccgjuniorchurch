@@ -5,6 +5,7 @@
 
     .form-control{
         box-shadow: none!important;
+        box-sizing: border-box
     }
     </style>
 @section('content')
